@@ -13,6 +13,7 @@ void display(int *a, int n) {
 void update(int *a, int as, int n){
     for (int i = 0; i < as; i++)
            a[i] += n;
+           
 }
 
 int main() {
