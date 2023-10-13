@@ -13,6 +13,7 @@ void* threadSum(void* arg) {
     int start = threadId * (NUM_NUMBERS / NUM_THREADS);
     int end = (threadId + 1) * (NUM_NUMBERS / NUM_THREADS);
 
+
     int threadSum = 0;
 
     for (int i = start; i < end; i++) {
