@@ -16,12 +16,73 @@ void initialize() {
 
 bool request_is_safe(int process, int request[NUM_RESOURCES]) {
     // Check if the request is valid and if it leads to a safe state
-    // Implement the Banker's algorithm logic here
+    int work[NUM_RESOURCES];
+    int finish[NUM_PROCESSES];
+
+    // Initialize work and finish arrays
+    for (int i = 0; i < NUM_RESOURCES; i++) {
+        work[i] = AVAILABLE[i];
+    }
+    for (int i = 0; i < NUM_PROCESSES; i++) {
+        finish[i] = 0;
+    }
+
+    // Check if the request can be granted
+    for (int i = 0; i < NUM_RESOURCES; i++) {
+        if (request[i] > NEED[process][i] || request[i] > work[i]) {
+            return false;
+        }
+    }
+
+    // Simulate the request
+    for (int i = 0; i < NUM_RESOURCES; i++) {
+        work[i] -= request[i];
+        ALLOCATION[process][i] += request[i];
+        NEED[process][i] -= request[i];
+    }
+
+    // Check if the system is in a safe state
+    while (1) {
+        bool found = false;
+        for (int i = 0; i < NUM_PROCESSES; i++) {
+            if (!finish[i]) {
+                int j;
+                for (j = 0; j < NUM_RESOURCES; j++) {
+                    if (NEED[i][j] > work[j]) {
+                        break;
+                    }
+                }
+                if (j == NUM_RESOURCES) {
+                    for (int k = 0; k < NUM_RESOURCES; k++) {
+                        work[k] += ALLOCATION[i][k];
+                    }
+                    finish[i] = 1;
+                    found = true;
+                }
+            }
+        }
+        if (!found) {
+            break;
+        }
+    }
+
+    // If all processes finish, it's safe
+    for (int i = 0; i < NUM_PROCESSES; i++) {
+        if (!finish[i]) {
+            return false;
+        }
+    }
+
+    return true;
 }
 
 void grant_request(int process, int request[NUM_RESOURCES]) {
-    // Update the matrices when a request is granted
-    // Implement the update logic here
+    // Grant the request and update matrices
+    for (int i = 0; i < NUM_RESOURCES; i++) {
+        AVAILABLE[i] -= request[i];
+        ALLOCATION[process][i] += request[i];
+        NEED[process][i] -= request[i];
+    }
 }
 
 int main() {
