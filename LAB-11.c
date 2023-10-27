@@ -99,7 +99,7 @@ int main() {
             scanf("%d", &request[j]);
         }
 
-        // Check if the request is valid
+        //   Check if the request is valid
         bool valid_request = true;
         for (int j = 0; j < NUM_RESOURCES; j++) {
             if (request[j] > NEED[process][j] || request[j] > AVAILABLE[j]) {
