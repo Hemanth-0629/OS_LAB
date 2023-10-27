@@ -108,7 +108,7 @@ int main() {
             }
         }
 
-        if (valid_request && isSafe(process, request)) {
+        if  (valid_request && isSafe(process, request)) {
             // Grant the request and update matrices
             for (int j = 0; j < NUM_RESOURCES; j++) {
                 AVAILABLE[j] -= request[j];
