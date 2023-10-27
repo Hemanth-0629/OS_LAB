@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h> // Include the <stdlib.h> header for rand
 #include <stdbool.h>
 
 #define NUM_PROCESSES 6
