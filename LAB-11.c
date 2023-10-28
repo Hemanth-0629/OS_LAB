@@ -106,7 +106,7 @@ int main() {
 
         if (request_is_safe(process, request)) {
             // Grant the request and update matrices
-            grant_request( process, request);
+            grant_request( process, request );
             printf("SAFE - Request granted. Updated matrices.\n");
         } else {
             printf("UNSAFE - Request denied.\n");
