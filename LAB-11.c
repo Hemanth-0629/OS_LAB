@@ -61,7 +61,7 @@ bool request_is_safe(int process, int request[NUM_RESOURCES]) {
                 }
             }
         }
-        if (!found) {
+        if (!foun d) {
             break;
         }
     }
