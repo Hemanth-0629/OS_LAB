@@ -66,7 +66,7 @@ bool request_is_safe(int process, int request[NUM_RESOURCES]) {
         }
     }
 
-    // If all processes finish, it's safe
+    // If all processes finish,it's safe
     for (int i = 0; i < NUM_PROCESSES; i++) {
         if (!finish[i]) {
             return false;
