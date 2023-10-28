@@ -99,7 +99,7 @@ int main() {
         }
 
         int request[NUM_RESOURCES];
-        printf("Enter  the request for process P%d (%d values separated by spaces): ", process, NUM_RESOURCES);
+        printf("Enter the request for process P%d (%d values separated by spaces): ", process, NUM_RESOURCES);
         for (int j = 0; j < NUM_RESOURCES; j++) {
             scanf("%d", &request[j]);
         }
