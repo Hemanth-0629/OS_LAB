@@ -73,7 +73,7 @@ bool request_is_safe(int process, int request[NUM_RESOURCES]) {
         }
     }
 
-    return true;
+    return   true;
 }
 
 void grant_request(int process, int request[NUM_RESOURCES]) {
