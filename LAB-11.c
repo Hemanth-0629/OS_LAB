@@ -109,7 +109,7 @@ int main() {
             grant_request( process, request );
             printf("SAFE - Request granted. Updated matrices.\n");
         } else {
-            printf ("UNSAFE - Request denied.\n");
+            printf("UNSAFE - Request denied.\n");
         }
     }
 
