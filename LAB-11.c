@@ -54,7 +54,7 @@ bool request_is_safe(int process, int request[NUM_RESOURCES]) {
                 }
                 if (j == NUM_RESOURCES) {
                     for (int k = 0; k < NUM_RESOURCES; k++) {
-                        work[k] +=  ALLOCATION[i][k];
+                        work[k] += ALLOCATION[i][k];
                     }
                     finish[i] = 1;
                     found = true;
