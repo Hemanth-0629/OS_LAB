@@ -111,6 +111,7 @@ int main() {
         } else {
             printf ("UNSAFE - Request denied.\n");
         }
+        
     }
 
     return 0;
