@@ -33,8 +33,6 @@ void c2() {
     }
 }
 
-
-
 void c1() {
     printf("Child 1 My id is %d and my parent id is %d.\n", getpid(), getppid());
     exit(0);
