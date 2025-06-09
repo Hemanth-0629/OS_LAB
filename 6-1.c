@@ -43,6 +43,7 @@ void parent_function() {
     wait(NULL);
     c1_pid = fork();
 
+    
     if (c1_pid == 0) {
         c1();
     } else {
