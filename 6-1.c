@@ -42,7 +42,6 @@ void parent_function() {
     int c1_pid;
     wait(NULL);
     c1_pid = fork();
-
     
     if (c1_pid == 0) {
         c1();
