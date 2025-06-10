@@ -33,6 +33,8 @@ void c2() {
     }
 }
 
+
+
 void c1() {
     printf("Child 1 My id is %d and my parent id is %d.\n", getpid(), getppid());
     exit(0);
@@ -42,7 +44,7 @@ void parent_function() {
     int c1_pid;
     wait(NULL);
     c1_pid = fork();
-    
+
     if (c1_pid == 0) {
         c1();
     } else {
