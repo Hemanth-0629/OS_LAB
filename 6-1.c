@@ -51,6 +51,8 @@ void parent_function() {
     }
 }
 
+
+
 int main() {
     int c2_pid = fork();
     if (c2_pid == 0) {
