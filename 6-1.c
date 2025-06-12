@@ -38,8 +38,6 @@ void c1() {
     exit(0);
 }
 
-
-
 void parent_function() {
     int c1_pid;
     wait(NULL);
